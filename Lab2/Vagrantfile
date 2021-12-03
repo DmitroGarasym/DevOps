@@ -1,0 +1,21 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "wm1" do |wm1|
+    wm1.vm.box = "centos/7"
+    wm1.vm.hostname = "machine1"
+
+    wm1.vm.provider :virtualbox do |v|
+      v.memory = 2048
+      v.cpus = 2
+    end
+  end
+
+  config.vm.define "wm2" do |wm2|
+    wm2.vm.box = "ubuntu/focal64"
+    wm2.vm.hostname = "machine2"
+
+    wm2.vm.provider :virtualbox do |v|
+      v.memory = 2048
+      v.cpus = 2
+    end
+  end
+end
