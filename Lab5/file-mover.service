@@ -1,0 +1,11 @@
+[Unit]
+Description=Move all files from one folder to another.
+
+[Service]
+User=root
+WorkingDirectory=/var/
+ExecStart=/bin/bash -c 'while true; do mv -fv folder1/* folder2 2>/dev/null; sleep 3; done'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
